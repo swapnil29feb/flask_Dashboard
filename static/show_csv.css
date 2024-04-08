@@ -1,0 +1,31 @@
+table {
+    background-color: #fff;
+    /* Sets the table background color to white */
+    border-radius: 15px;
+    width: 800px;
+    font-weight: 500px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #c9c9c9;
+    /* Sets the background color of odd rows to light gray */
+}
+
+.container
+{
+    width: 95%;
+    height: 700px;
+    overflow:auto;
+    background:#fff;
+    /* text-align: left; */
+}

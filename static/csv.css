@@ -1,0 +1,92 @@
+.chart-row{
+    min-height:max-content;
+}
+
+.csv-cotainer {
+    height: calc(100vh - 10vh);    
+    width: calc(100% - 15rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 16px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+    padding-bottom: 25px;
+    margin: 15px;
+}
+
+.main-csv-temp {
+    border: 1px solid white;
+    border-radius: 16px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    color: whitesmoke;
+
+}
+
+.csv-row {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    border: 2px outset whitesmoke;
+    border-radius: 16px;
+    background-color: #F4F6F7;
+}
+
+.dwld-template {
+    display: flex;
+    justify-items: center;
+    width: 600px;
+    align-items:center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.dwld-file {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cfcdcd;
+    border-radius: 15px;
+    justify-items: center;
+    color: white;
+    column-gap: 20px;
+    margin: 15px;
+}
+
+.dwld-file > a {
+    align-self:stretch;
+    text-decoration: none;
+}
+
+.file {
+	border: 1px solid #cfcdcd;
+	padding: 10px;
+	border-radius: 15px;
+	color: white;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.import {
+    width: 100%;
+    
+}
+
+.btn-submit {
+	background: #efefef;
+	border: #d3d3d3 1px solid;
+	width: 100%;
+	border-radius: 15px;
+	cursor: pointer;
+	padding: 12px;
+}
+
+.btn-submit:hover {
+	background: #d9d8d8;
+	border: #c3c1c1 1px solid;
+    
+}

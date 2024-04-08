@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="/static/csv.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="nav-container">
+            <div class="app-info">
+                <h4>NSAppv1</h4>
+            </div>
+            <div class="login-info">{{user_login_data}}</div>
+        </div>
+        <div class="content-container">
+            <div class="aside-bar">
+                <div class="link-info"><a href="{{url_for('dashboard')}}" id="dashboard-link">Dashboard</a></div>
+                <div class="link-info"><a href="{{url_for('csv_upload')}}">Upload Seeds To DB</a></div>
+                <div class="link-info"><a href="{{url_for('show_csv')}}">View Tables</a></div>
+                <div class="link-info"><a href="#">Logout</a></div>
+            </div>
+            <div class="csv-cotainer">
+                <div class="main-csv-temp">
+                    <h1>CSV Import</h1>
+                    <form action="{{url_for('csv_upload')}}" method="post" enctype="multipart/form-data">
+                        <div class="dwld-template">
+                            <div class="dwld-file">
+                                <label>Download Template</label>
+                                <a href="/static/main_template.csv" download>Download CSV file</a>
+                            </div>
+                            <input type="file" name="file" class="file" accept=".csv">
+                            <div class="import">
+                                <button type="submit" name="import" class="btn-submit">Import CSV and Save Data</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                    <div class="csv-row"></div>
+                        <div class="container">
+                        </div>
+                    <div class="footer-container">Made with love by, Swap29feb.</div>
+                
+            </div>
+            
+        </div>
+    </div>    
+    
+</body>
+</html>

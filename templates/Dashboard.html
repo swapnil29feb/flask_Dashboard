@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="nav-container">
+            <div class="app-info">
+                <h4>NSAppv1</h4>
+            </div>
+            <div class="login-info">{{user_login_data}}</div>
+        </div>
+        <div class="content-container">
+            <div class="aside-bar">
+                <div class="link-info"><a href="{{url_for('dashboard')}}" id="dashboard-link">Dashboard</a></div>
+                <div class="link-info"><a href="{{url_for('csv_upload')}}">Upload Seeds To DB</a></div>
+                <div class="link-info"><a href="{{url_for('show_csv')}}">View Tables</a></div>
+                <div class="link-info"><a href="{{url_for('sign_out')}}">Logout</a></div>
+            </div>
+            <div class="info-cotainer">
+                <div class="cards-row">
+                    <div class="card neutral">
+                        <div class="card-header"><i class='bx bx-task'></i>Tasks</div>
+                        <div class="card-content">38</div>
+                    </div>
+                    <div class="card neutral">
+                        <div class="card-header">Uploaded Seeds</div>
+                        <div class="card-content">{{rowvalues}}</div>
+                    </div>
+                    <div class="card success">
+                        <div class="card-header">Active Seeds</div>
+                        <div class="card-content">900</div>
+                    </div>
+                    <div class="card danger">
+                        <div class="card-header">Disabled Seeds</div>
+                        <div class="card-content">300</div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <canvas id="tasksseeds" style="width:60%; height: 250px;"></canvas>
+                </div>
+                <div class="chart-row"></div>
+                <div class="footer-container">Made with love by, Swap.</div>
+            </div>
+            
+        </div>
+    </div>    
+    <script type="module">
+            const ctx3 = document.getElementById('tasksseeds');      
+            new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: ['2023-08-16', '2023-08-17', '2023-08-18', '2023-08-19', '2023-08-20', '2023-08-21', '2023-08-22'],
+                    datasets: [{
+                    label: '# Seeds',
+                    data: [1500, 1350, 2470, 2550, 3540, 375, 2422],
+                    fill: false,              
+                    borderWidth: 1,
+                    borderColor: 'rgb(52, 152, 219)',
+                    tension: 0.1
+                    }]
+                },
+                options: {
+                    backgroundColor: [
+                        'rgb(52, 152, 219)'
+                    ],
+                    scale: {
+                        pointLabels :{
+                        fontStyle: "bold",
+                        }
+                    }
+                }                  
+            });
+    </script>
+</body>
+</html>
