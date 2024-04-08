@@ -2,7 +2,6 @@ from flask import Flask, render_template, url_for, request, flash, redirect, ses
 import os
 from fileinput import filename
 import sqlite3
-import pandas as pd
 from io import StringIO
 from werkzeug.utils import secure_filename
 
